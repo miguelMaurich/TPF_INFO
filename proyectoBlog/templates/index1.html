@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contenido %}
+<main>
+   <section>
+      <article class="p-3 m-0 border-0 bd-example">
+         <header id="header" class="card-header bg-transparent border-success">
+            <p class="fs-2">Noticias</p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                
+               <a class="btn btn-info" aria-current="page" href="{% url 'noticias' %}">Ver Mas</a>
+            </div>
+         </header>
+         <!-- /header -->
+         
+         
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+               {% for una_noticia in noticia %}
+               <div class="col">
+                  <div class="card h-100">
+                     <img src="{{MEDIA_ROOT}}/img/noticias/{{una_noticia.img}}" class="card-img-top" alt="Nature" style="width:100%">
+                     <div class="card-body">
+                        <h5 class="card-title">{{una_noticia.titulo}}</h5>
+                        <p class="card-text text-truncate">{{una_noticia.contenido}} </p>
+                     </div>
+                     <div class="card-footer">
+                        <small class="text-muted">{{una_noticia.publicado}}</small>
+                     </div>
+                  </div>
+               </div>
+         {% endfor %}
+         </div>
+      </article>
+   </section>
+   <section class="p-3 m-0 border-0 bd-example">
+      <div class="p-5 mb-4 bg-info rounded-3 text-center">
+         <div class="container-fluid py-5">
+            <h5 class=" fw-bold">Desarrollamos actividades culturales y educativas.</h5>
+            <div class="lh-1">
+               <p class="text-center">Propiciamos acciones con el fin de conservar el Patrimonio cultural</p>
+               <p class="text-center">inmaterial y material como el arquitectónico y todo acervo relativo al</p>
+               <p class="text-center">patrimonio cultural y natural de Fontana, Chaco.</p>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section>
+      <article class="p-3 m-0 border-0 bd-example">
+         <header id="header" class="card-header bg-transparent border-success">
+            <p class="fs-2">Eventos</p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+               <button type="button" class="btn btn-info ">Ver Mas</button>
+            </div>
+         </header>
+         <!-- /header -->
+         <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+               <div class="card h-100">
+                  <img src="{% static 'img/not.png' %}" class="card-img-top" alt="Nature" style="width:100%">
+                  <div class="card-body">
+                     <h5 class="card-title">Card title</h5>
+                     <p class="card-text text-truncate">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  </div>
+                  <div class="card-footer">
+                     <small class="text-muted">Last updated 3 mins ago</small>
+                  </div>
+               </div>
+            </div>
+            <div class="col">
+               <div class="card h-100">
+                  <img src="{% static 'img/not.png' %}" class="card-img-top" alt="Nature" style="width:100%">
+                  <div class="card-body">
+                     <h5 class="card-title">Card title</h5>
+                     <p class="card-text text-truncate">This card has supporting text below as a natural lead-in to additional content.</p>
+                  </div>
+                  <div class="card-footer">
+                     <small class="text-muted">Last updated 3 mins ago</small>
+                  </div>
+               </div>
+            </div>
+            <div class="col">
+               <div class="card h-100">
+                  <img src="{% static 'img/not.png' %}" class="card-img-top" alt="Nature" style="width:100%">
+                  <div class="card-body">
+                     <h5 class="card-title">Card title</h5>
+                     <p class="card-text text-truncate">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                  </div>
+                  <div class="card-footer">
+                     <small class="text-muted">Last updated 3 mins ago</small>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </article>
+   </section>
+</main>
+{% endblock %}
+
+

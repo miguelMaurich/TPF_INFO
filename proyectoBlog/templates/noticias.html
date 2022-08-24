@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contenido %}
+
+{% for noticia in noticias %}
+<hr class="featurette-divider">
+<div class="row featurette">
+  <div class="col-md-7">
+    <h2 class="featurette-heading">{{noticia.titulo}}</h2>
+    <p class="lead text-truncate">{{noticia.contenido}}</p>
+  </div>
+  <div class="col-md-5">
+    <img  src="{{MEDIA_ROOT}}/img/noticias/{{noticia.img}}" alt="">
+  </div>
+  <p><a class="btn btn-secondary" href="{% url 'noticiasdetalle' id=noticia.id %}">Leer más &raquo;</a></p>
+</div>
+
+<hr class="featurette-divider">
+{% endfor %}
+
+
+<!-- /END THE FEATURETTES -->
+{% endblock %}
